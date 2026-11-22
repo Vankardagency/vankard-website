@@ -1,0 +1,4 @@
+---
+import Layout from '../layouts/Layout.astro';import CTA from '../components/CTA.astro';import {getContent} from '../lib/content';const {faqs}=await getContent();
+---
+<Layout title="Frequently asked questions" faqItems={faqs}><section class="page-hero grid-paper"><span class="eyebrow">No mystery required</span><h1>Good questions.<br/><em>Straight answers.</em></h1><p>What Recover does, who it is for, and how the offer works.</p></section><section class="section narrow">{faqs.map(f=><details><summary>{f.question}</summary><p>{f.answer}</p></details>)}</section><CTA/></Layout>
